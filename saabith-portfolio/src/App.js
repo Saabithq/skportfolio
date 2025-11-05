@@ -333,8 +333,8 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl blur-2xl opacity-10"></div>
               <div className="relative aspect-square max-w-md mx-auto">
                 <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 transform hover:scale-[1.01] transition-transform duration-500">
-                  <img 
-                    src="/images/12.jpg" 
+                     <img 
+                       src={process.env.PUBLIC_URL + '/images/12.jpg'} 
                     alt="profile" 
                     className="w-full h-full object-cover"
                   />
@@ -397,7 +397,7 @@ export default function App() {
                   <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 to-cyan-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <div className="relative h-full bg-white/[0.03] backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors overflow-hidden">
                     <div className="aspect-video rounded-xl overflow-hidden ring-1 ring-white/10 mb-4">
-                      <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
+                      <img src={process.env.PUBLIC_URL + p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />
                     </div>
                     <div className="flex items-start justify-between gap-4">
                       <div>

@@ -51,35 +51,40 @@ export default function App() {
       desc: "AI-powered student management platform integrating Google's Gemini API for PDF Q&A and schedule management.",
       tech: ["Python", "Flask", "Streamlit", "Gemini API"],
       link: "https://github.com/Saabithq/studentManagment",
-      image: "https://via.placeholder.com/600x400?text=Student+Management+System"
+      image: "/images/1.png"
     },
     {
       title: "Library Management System",
       desc: "Full-stack library management system with role-based access, reports, and responsive UI.",
       tech: ["PHP", "MySQL", "Bootstrap"],
       link: "https://github.com/Saabithq/libraryManagment",
-      image: "https://via.placeholder.com/600x400?text=Library+Management+System"
+      image: "/images/2.png"
     },
     {
       title: "Hospital Management System",
       desc: "Comprehensive hospital system with appointment scheduling and analytics dashboard.",
       tech: ["PHP", "MySQL", "Bootstrap"],
       link: "https://github.com/Saabithq/hospitalManagement",
-      image: "https://via.placeholder.com/600x400?text=Hospital+Management+System"
+      image: "/images/3.png"
     },
   ];
 
   const skills = {
-    languages: [
+     languages1: [
       { name: "Python", level: 90 },
+      { name: "C", level: 90 },
+      { name: "Java", level: 90 },
+    
+    ],
+    languages: [
+      
       { name: "JavaScript", level: 85 },
-      { name: "PHP", level: 80 },
+      { name: "Shell", level: 80 },
       { name: "SQL", level: 85 },
     ],
     frameworks: [
       { name: "React", level: 85 },
       { name: "Flask", level: 90 },
-      { name: "Laravel", level: 80 },
       { name: "Bootstrap", level: 90 },
     ],
     tools: [
@@ -94,6 +99,7 @@ export default function App() {
 
   // Flatten skills into a single array for rendering
   const skillList = [
+    ...skills.languages1.map((l1) => ({ type: 'skill', label: l1.name, level: l1.level })),
     ...skills.languages.map((l) => ({ type: 'skill', label: l.name, level: l.level })),
     ...skills.frameworks.map((f) => ({ type: 'skill', label: f.name, level: f.level })),
     ...skills.tools.map((t) => ({ type: 'tool', label: t.name, icon: t.icon })),
@@ -328,7 +334,7 @@ export default function App() {
               <div className="relative aspect-square max-w-md mx-auto">
                 <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 transform hover:scale-[1.01] transition-transform duration-500">
                   <img 
-                    src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                    src="/images/12.jpg" 
                     alt="profile" 
                     className="w-full h-full object-cover"
                   />
@@ -346,8 +352,12 @@ export default function App() {
             <h2 className="text-4xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-12 text-center">Experience</h2>
             <ol className="relative border-l border-white/10">
               {[
+                { role: 'System Engineer', company: 'Sutherland Globals', period: '2025 — Present', points: ['Window administration', 'desktop support'] },
+                 { role: 'Computer Science Lab Instructor', company: 'MEA Engineering College', period: '2023 — 2025', points: ['Linux administration', 'Networking'] },
+                { role: 'DevOps Intern', company: 'tech minds', period: '2023 — 2024', points: ['Set up CI/CD with GitHub Actions', 'Containerized apps with Docker & optimized images'] },
                 { role: 'Software Developer', company: 'Freelance', period: '2023 — Present', points: ['Built AI-assisted tools with Python/Flask', 'Delivered responsive React UIs with motion'] },
-                { role: 'DevOps Intern', company: 'Tech Labs', period: '2022 — 2023', points: ['Set up CI/CD with GitHub Actions', 'Containerized apps with Docker & optimized images'] },
+
+               
               ].map((e, i) => (
                 <li key={i} className="ml-6 mb-10">
                   <span className="absolute -left-1.5 mt-2 h-3 w-3 rounded-full bg-sky-400"></span>
@@ -475,16 +485,16 @@ export default function App() {
       <section id="testimonials" className="py-24 relative">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-12 text-center">What People Say</h2>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-12 text-center">"IMPRESSIONS"</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { quote: 'Delivers clean, production-ready code on time.', name: 'Product Manager' },
-                { quote: 'Great at simplifying complex systems.', name: 'Tech Lead' },
-                { quote: 'Excellent UI polish and DevOps mindset.', name: 'Founder' },
+                { quote: 'Delivers clean, production-ready code on time.', name: '' },
+                { quote: 'Great at simplifying complex systems.', name: '' },
+                { quote: 'Excellent UI polish and DevOps mindset.', name: '' },
               ].map((t, i) => (
                 <motion.blockquote key={i} className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-6 backdrop-blur-xl" initial={{ y: 10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }}>
                   <p className="text-slate-200">“{t.quote}”</p>
-                  <div className="mt-4 text-sm text-slate-400">— {t.name}</div>
+                  <div className="mt-4 text-sm text-slate-400">{t.name}</div>
                 </motion.blockquote>
               ))}
             </div>
